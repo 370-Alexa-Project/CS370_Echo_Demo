@@ -157,11 +157,11 @@ ALTER TABLE ssucalendar.events ADD CONSTRAINT contact_id FOREIGN KEY (contact_id
 --
 
 GRANT CONNECT
-  ON DATABASE "SSUCalendar"
+  ON DATABASE ssunews
   TO scraper,alexaskill;
 
 GRANT CREATE,CONNECT
-  ON DATABASE "SSUCalendar"
+  ON DATABASE ssunews
   TO ssuadmin;
 
 GRANT CREATE,USAGE
