@@ -1,4 +1,10 @@
-/* This class can be used to simplify the process of connecting to a postgresql database.
+/* Before attempting to use this class, follow the directions on the wiki at
+ * https://github.com/370-Alexa-Project/CS370_Echo_Demo/wiki/Using-the-dbConnection-class
+ * to make sure you have everything set up properly. Unfortunately, you must download
+ * a driver (which can't go up on github) and you need to create a file to store your
+ * username and password for the database (which you wouldn't want to put on Github either).
+ * 
+ * This class can be used to simplify the process of connecting to a postgresql database.
  * In order to connect to the database, you should call getCredentials() before calling
  * getRemoteConnection(). Then you can run your queries with runQuery().
  */
