@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>Template_Skill</groupId>
+  <artifactId>Template_Skill</artifactId>
+  <name>Template Skill for voice interaction design</name>
+  <version>1.0</version>
+  <description>This is a common boiler plate template for developers to build upon, to allow easier integration of their Conversation objects developed into a larger virtual assistant persona.</description>
+  <url>http://www.sonoma.edu</url>
+  <organization>
+    <name>Sonoma State University</name>
+    <url>http://www.sonoma.edu</url>
+  </organization>
+  <build>
+    <resources>
+      <resource>
+        <directory>resources/</directory>
+      </resource>
+    </resources>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>3.3</version>
+          <configuration>
+            <source>1.7</source>
+            <target>1.7</target>
+          </configuration>
+        </plugin>
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>exec-maven-plugin</artifactId>
+          <version>1.2.1</version>
+          <configuration>
+            <mainClass>Launcher</mainClass>
+            <systemProperties>
+              <systemProperty>
+                <key>javax.net.ssl.keyStore</key>
+                <value>/insert/your/path/java-keystore.jks</value>
+              </systemProperty>
+              <systemProperty>
+                <key>javax.net.ssl.keyStorePassword</key>
+                <value>insert_your_password</value>
+              </systemProperty>
+              <systemProperty>
+                <key>com.amazon.speech.speechlet.servlet.disableRequestSignatureCheck</key>
+                <value>${disableRequestSignatureCheck}</value>
+              </systemProperty>
+              <systemProperty>
+                <key>com.amazon.speech.speechlet.servlet.supportedApplicationIds</key>
+                <value>${supportedApplicationIds}</value>
+              </systemProperty>
+              <systemProperty>
+                <key>com.amazon.speech.speechlet.servlet.timestampTolerance</key>
+                <value>${timestampTolerance}</value>
+              </systemProperty>
+            </systemProperties>
+          </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
+  <properties />
+</project>
+
