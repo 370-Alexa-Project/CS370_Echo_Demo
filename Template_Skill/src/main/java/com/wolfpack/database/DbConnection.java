@@ -14,6 +14,7 @@ package com.wolfpack.database;
 import java.util.*;
 
 import java.sql.*;
+import java.util.concurrent.TimeUnit;
 
 import java.io.File;
 import org.w3c.dom.Document;
@@ -220,20 +221,23 @@ public class DbConnection {
 	 * 
 	 * Unless all of the strings being printed out are the same length,
 	 * the output produced will not line up nicely.
+	 * 
+	 * If there are more than 50 entries in a column, the method will only
+	 * print out the first 50. This is because sometimes if nothing gets
+	 * printed out at all if you try to print out too many things at once.
 	 */
 	public void printResultMap(Map<String, Vector<String>> resultMap){
-
 		if(resultMap != null){
 			System.out.println("Printing the Results as a map:");
-	
+			
 			for (Map.Entry<String,Vector<String>> entry : resultMap.entrySet()) {
-				
-				System.out.print(entry.getKey() + ": ");
+				String aKey = entry.getKey();
+				System.out.printf("%s:  ", aKey);
 			  
-				//Print out the values from the vector
+				//Print out the first 50 values from the vector
 				Vector<String> values = entry.getValue();
-				for(int i = 0; i < values.size(); i++){
-					System.out.print(values.get(i) + "  [" + i + "]  ");
+				for(int i = 0; i < Math.min(values.size(), 50); i++){
+					System.out.printf("|[%d]  %s  ", i, values.get(i));
 				}
 				System.out.print("\n");
 			  
