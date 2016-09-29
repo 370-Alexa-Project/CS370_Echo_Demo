@@ -42,7 +42,21 @@ public class DbConnection {
 	public DbConnection() {
 		connected = false;
 	}
+	
+	
+	
+	/**
+	 * The second constructor allows you to pass the path to the credentials for
+	 * the database and then load in those credentials. This replaces calling
+	 * the main constructor and then needing to call getCredentials().
+	 */
+	public DbConnection(String pathToCredentials){
+		connected = false;
+		getCredentials(pathToCredentials);
+	}
 
+	
+	
 	/**
 	 * This method will attempt to get the user's credentials (username,
 	 * password, etc) so that they can log into the database. Since this file
@@ -81,7 +95,7 @@ public class DbConnection {
 			hostName = doc.getElementsByTagName("hostName").item(0).getTextContent();
 			port = doc.getElementsByTagName("port").item(0).getTextContent();
 
-			// Error catching
+		// Error catching
 		} catch (SAXParseException err) {
 			System.out.println("** Parsing error" + ", line " + err.getLineNumber() + ", uri " + err.getSystemId());
 			System.out.println(" " + err.getMessage());
