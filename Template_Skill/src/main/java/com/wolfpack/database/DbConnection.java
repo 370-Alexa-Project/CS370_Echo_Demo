@@ -100,8 +100,8 @@ public class DbConnection {
 			System.out.println("Unable to find or open database credentials file. Try checking the path provided.");
 			return false;
 		} catch (SAXParseException saxpe) {
-			System.out.println("** Parsing error" + ", line " + err.getLineNumber() + ", uri " + err.getSystemId());
-			System.out.println(" " + err.getMessage());
+			System.out.println("** Parsing error" + ", line " + saxpe.getLineNumber() + ", uri " + saxpe.getSystemId());
+			System.out.println(" " + saxpe.getMessage());
 			return false;
 		} catch (SAXException e) {
 			Exception x = e.getException();
