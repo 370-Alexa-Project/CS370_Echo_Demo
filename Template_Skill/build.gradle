@@ -22,6 +22,8 @@ repositories {
 }
 
 dependencies {
+	compile 'org.postgresql:postgresql:9.4.1211'
+
     compile 'com.amazon.alexa:alexa-skills-kit:1.1.2'
     compile 'com.amazonaws:aws-lambda-java-core:1.0.0'
     compile 'com.amazonaws:aws-java-sdk-dynamodb:1.9.40'
@@ -32,6 +34,7 @@ dependencies {
     compile 'org.eclipse.jetty:jetty-server:9.0.6.v20130930'
     compile 'org.eclipse.jetty:jetty-servlet:9.0.6.v20130930'
     compile 'org.slf4j:slf4j-api:1.7.10'
+    
 }
 
 task fatJar(type: Jar) {
