@@ -30,6 +30,7 @@ public class DbConnection {
 	private static String password;
 	private static String hostName; // The url to the database
 	private static String port;
+	private static String localPathToSSL;
 	static Connection dbConnection;
 	private static boolean connected;
 
@@ -41,21 +42,17 @@ public class DbConnection {
 	public DbConnection() {
 		connected = false;
 	}
-	
-	
-	
+
 	/**
 	 * The second constructor allows you to pass the path to the credentials for
 	 * the database and then load in those credentials. This replaces calling
 	 * the main constructor and then needing to call getCredentials().
 	 */
-	public DbConnection(String pathToCredentials){
+	public DbConnection(String pathToCredentials) {
 		connected = false;
 		getCredentials(pathToCredentials);
 	}
 
-	
-	
 	/**
 	 * This method will attempt to get the user's credentials (username,
 	 * password, etc) so that they can log into the database. Since this file
@@ -93,9 +90,10 @@ public class DbConnection {
 			password = doc.getElementsByTagName("password").item(0).getTextContent();
 			hostName = doc.getElementsByTagName("hostName").item(0).getTextContent();
 			port = doc.getElementsByTagName("port").item(0).getTextContent();
+			localPathToSSL = doc.getElementsByTagName("localPathToSSL").item(0).getTextContent();
 
-		// Error catching
-		} catch (java.io.FileNotFoundException fnfe){
+			// Error catching
+		} catch (java.io.FileNotFoundException fnfe) {
 			System.out.println("Unable to find or open database credentials file. Try checking the path provided.");
 			return false;
 		} catch (SAXParseException saxpe) {
@@ -136,7 +134,7 @@ public class DbConnection {
 
 		// Create a url to be able to connect to the database.
 		String jdbcUrl = "jdbc:postgresql://" + hostName + ":" + port + "/" + dbName + "?user=" + username
-				+ "&password=" + password;
+				+ "&password=" + password + "&sslmode=verify-full&sslrootcert=" + localPathToSSL;
 
 		try {
 			Class.forName("org.postgresql.Driver");
