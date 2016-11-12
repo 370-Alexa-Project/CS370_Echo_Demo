@@ -105,7 +105,7 @@ public class CalendarConversation extends Conversation {
 		 */
 
 		default:
-			response = handleStateSensitiveIntents(intentReq, session);
+			response = routeStateSensitiveIntents(intentReq, session);
 			break;
 		}
 
@@ -114,9 +114,9 @@ public class CalendarConversation extends Conversation {
 
 
 	/**
-	 * Dispatch intent request handlers for state-sensitive intents
+	 * Route a state-sensitive intent to the correct handler.
 	 */
-	private SpeechletResponse handleStateSensitiveIntents(IntentRequest intentReq, Session session) {
+	private SpeechletResponse routeStateSensitiveIntents(IntentRequest intentReq, Session session) {
 		SpeechletResponse response;
 		SessionState state;
 		String stateAttrib = (String) session.getAttribute(ATTRIB_STATEID);
@@ -128,7 +128,7 @@ public class CalendarConversation extends Conversation {
 
 		switch (state) {
 		case USER_HEARD_EVENTS:
-			response = handleDetailIntents(intentReq, session);
+			response = routeDetailIntents(intentReq, session);
 			break;
 
 		case LIST_TOO_LONG:
@@ -144,9 +144,9 @@ public class CalendarConversation extends Conversation {
 
 
 	/**
-	 * Dispatch detail intents
+	 * Route a detail intent to the correct handler.
 	 */
-	private SpeechletResponse handleDetailIntents(IntentRequest intentReq, Session session) {
+	private SpeechletResponse routeDetailIntents(IntentRequest intentReq, Session session) {
 		SpeechletResponse response;
 		String intentName = intentReq.getIntent().getName();
 
@@ -173,7 +173,7 @@ public class CalendarConversation extends Conversation {
 
 
 	/**
-	 * Map narrow-down intents by category
+	 * Handle narrow-down intents by category
 	 */
 	private SpeechletResponse handleNarrowDownIntents(IntentRequest intentReq, Session session) {
 		String intentName = intentReq.getIntent().getName();
@@ -544,9 +544,9 @@ public class CalendarConversation extends Conversation {
 	private static SpeechletResponse dayByDayEventsResponse(Map<String, Vector<Object>> results,
 	                                                        DateRange when, String prefix) {
 		String eventFormat = "<s>{title} at {start:time}</s>";
-
 		String responseSsml = prefix + CalendarHelper.listEventsWithDays(eventFormat, results);
 		String repromptSsml = "Is there anything you would like to know about those events?";
+
 		return newAffirmativeResponse(responseSsml, repromptSsml);
 	}
 
