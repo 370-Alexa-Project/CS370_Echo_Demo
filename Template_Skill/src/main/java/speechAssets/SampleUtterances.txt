@@ -11,6 +11,29 @@ AllCategoryIntent I want to hear about all the categories
 AllCategoryIntent tell me about all the categories
 AllCategoryIntent gotta catch them all
 
+AMAZON.CancelIntent cancel
+AMAZON.CancelIntent forget it
+AMAZON.CancelIntent never mind
+
+AMAZON.HelpIntent I need help
+
+AMAZON.HelpIntent can you help me with something
+
+AMAZON.HelpIntent help  
+AMAZON.HelpIntent help me
+
+AMAZON.NoIntent no  
+AMAZON.NoIntent no thank you
+AMAZON.NoIntent no thanks
+AMAZON.NoIntent nope  
+AMAZON.NoIntent nope thank you
+AMAZON.NoIntent nope thanks
+
+AMAZON.StopIntent end
+AMAZON.StopIntent finish
+AMAZON.StopIntent quit
+AMAZON.StopIntent stop
+
 ArtsAndEntertainmentCategoryIntent the arts and entertainment category
 ArtsAndEntertainmentCategoryIntent the art category
 ArtsAndEntertainmentCategoryIntent the entertainment category

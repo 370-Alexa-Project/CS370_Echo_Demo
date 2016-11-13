@@ -6,6 +6,12 @@ https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/suppor
 
 ```
 AllCategoryIntent (all|all of them|everything|give me all of them|every category|all the categories|I want them all|list them all|give me all|I want to hear about all the categories|tell me about all the categories|gotta catch them all)
+AMAZON.CancelIntent (cancel|forget it|never mind)
+AMAZON.HelpIntent I need help
+AMAZON.HelpIntent can you help me with something
+AMAZON.HelpIntent help ( |me)
+AMAZON.NoIntent (no|nope) ( |thank you|thanks)
+AMAZON.StopIntent (end|finish|quit|stop)
 ArtsAndEntertainmentCategoryIntent ( |tell me about|I want to hear about|lets do|lets hear about|how about) (the arts and entertainment category|the art category|the entertainment category|art|arts and entertainment|shows|performances|cool art stuff)
 ClubsCategoryIntent ( |tell me about|I want to hear about|lets do|lets hear about|how about) (the clubs category|clubs|club stuff|club things|club meetings|club gatherings)
 GetEndDetailIntent What time (is|does) {eventName} (over|end|finish|done)
