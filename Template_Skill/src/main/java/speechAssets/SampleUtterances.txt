@@ -1,16 +1,3 @@
-AllCategoryIntent all
-AllCategoryIntent all of them
-AllCategoryIntent everything
-AllCategoryIntent give me all of them
-AllCategoryIntent every category
-AllCategoryIntent all the categories
-AllCategoryIntent I want them all
-AllCategoryIntent list them all
-AllCategoryIntent give me all
-AllCategoryIntent I want to hear about all the categories
-AllCategoryIntent tell me about all the categories
-AllCategoryIntent gotta catch them all
-
 AMAZON.CancelIntent cancel
 AMAZON.CancelIntent forget it
 AMAZON.CancelIntent never mind
@@ -33,6 +20,116 @@ AMAZON.StopIntent end
 AMAZON.StopIntent finish
 AMAZON.StopIntent quit
 AMAZON.StopIntent stop
+
+
+
+GetEventsOnDateIntent what is on {date}
+GetEventsOnDateIntent what is for {date}
+GetEventsOnDateIntent what is happening on {date}
+GetEventsOnDateIntent what is happening for {date}
+GetEventsOnDateIntent what is going on on {date}
+GetEventsOnDateIntent what is going on for {date}
+GetEventsOnDateIntent what is coming up on {date}
+GetEventsOnDateIntent what is coming up for {date}
+GetEventsOnDateIntent what is the haps on {date}
+GetEventsOnDateIntent what is the haps for {date}
+GetEventsOnDateIntent what is occurring on {date}
+GetEventsOnDateIntent what is occurring for {date}
+GetEventsOnDateIntent what is scheduled on {date}
+GetEventsOnDateIntent what is scheduled for {date}
+GetEventsOnDateIntent what is on the calendar on {date}
+GetEventsOnDateIntent what is on the calendar for {date}
+GetEventsOnDateIntent what is cool on {date}
+GetEventsOnDateIntent what is cool for {date}
+GetEventsOnDateIntent what is ahead on {date}
+GetEventsOnDateIntent what is ahead for {date}
+GetEventsOnDateIntent what is destined on {date}
+GetEventsOnDateIntent what is destined for {date}
+GetEventsOnDateIntent what is the future on {date}
+GetEventsOnDateIntent what is the future for {date}
+GetEventsOnDateIntent what's on {date}
+GetEventsOnDateIntent what's for {date}
+GetEventsOnDateIntent what's happening on {date}
+GetEventsOnDateIntent what's happening for {date}
+GetEventsOnDateIntent what's going on on {date}
+GetEventsOnDateIntent what's going on for {date}
+GetEventsOnDateIntent what's coming up on {date}
+GetEventsOnDateIntent what's coming up for {date}
+GetEventsOnDateIntent what's the haps on {date}
+GetEventsOnDateIntent what's the haps for {date}
+GetEventsOnDateIntent what's occurring on {date}
+GetEventsOnDateIntent what's occurring for {date}
+GetEventsOnDateIntent what's scheduled on {date}
+GetEventsOnDateIntent what's scheduled for {date}
+GetEventsOnDateIntent what's on the calendar on {date}
+GetEventsOnDateIntent what's on the calendar for {date}
+GetEventsOnDateIntent what's cool on {date}
+GetEventsOnDateIntent what's cool for {date}
+GetEventsOnDateIntent what's ahead on {date}
+GetEventsOnDateIntent what's ahead for {date}
+GetEventsOnDateIntent what's destined on {date}
+GetEventsOnDateIntent what's destined for {date}
+GetEventsOnDateIntent what's the future on {date}
+GetEventsOnDateIntent what's the future for {date}
+
+NextEventIntent next thing
+NextEventIntent next event
+NextEventIntent next show
+NextEventIntent next meeting
+
+NextEventIntent thing soon
+NextEventIntent thing next
+NextEventIntent thing happening soon
+NextEventIntent thing happening next
+NextEventIntent event soon
+NextEventIntent event next
+NextEventIntent event happening soon
+NextEventIntent event happening next
+NextEventIntent show soon
+NextEventIntent show next
+NextEventIntent show happening soon
+NextEventIntent show happening next
+NextEventIntent meeting soon
+NextEventIntent meeting next
+NextEventIntent meeting happening soon
+NextEventIntent meeting happening next
+
+NextEventIntent what is the next event  
+NextEventIntent what is the next event on the calendar
+NextEventIntent what is coming up  
+NextEventIntent what is coming up on the calendar
+NextEventIntent what's the next event  
+NextEventIntent what's the next event on the calendar
+NextEventIntent what's coming up  
+NextEventIntent what's coming up on the calendar
+
+NextEventIntent something to do soon
+NextEventIntent something to do coming up
+NextEventIntent something to do that's soon
+NextEventIntent something to do that's coming up
+NextEventIntent something to do that is soon
+NextEventIntent something to do that is coming up
+NextEventIntent something fun soon
+NextEventIntent something fun coming up
+NextEventIntent something fun that's soon
+NextEventIntent something fun that's coming up
+NextEventIntent something fun that is soon
+NextEventIntent something fun that is coming up
+
+
+
+AllCategoryIntent all
+AllCategoryIntent all of them
+AllCategoryIntent everything
+AllCategoryIntent give me all of them
+AllCategoryIntent every category
+AllCategoryIntent all the categories
+AllCategoryIntent I want them all
+AllCategoryIntent list them all
+AllCategoryIntent give me all
+AllCategoryIntent I want to hear about all the categories
+AllCategoryIntent tell me about all the categories
+AllCategoryIntent gotta catch them all
 
 ArtsAndEntertainmentCategoryIntent the arts and entertainment category
 ArtsAndEntertainmentCategoryIntent the art category
@@ -120,145 +217,6 @@ ClubsCategoryIntent how about club things
 ClubsCategoryIntent how about club meetings
 ClubsCategoryIntent how about club gatherings
 
-GetEndDetailIntent What time is {eventName} over
-GetEndDetailIntent What time is {eventName} end
-GetEndDetailIntent What time is {eventName} finish
-GetEndDetailIntent What time is {eventName} done
-GetEndDetailIntent What time does {eventName} over
-GetEndDetailIntent What time does {eventName} end
-GetEndDetailIntent What time does {eventName} finish
-GetEndDetailIntent What time does {eventName} done
-
-GetEndDetailIntent When is {eventName} end
-GetEndDetailIntent When is {eventName} over
-GetEndDetailIntent When is {eventName} finished
-GetEndDetailIntent When is {eventName} done
-GetEndDetailIntent When does {eventName} end
-GetEndDetailIntent When does {eventName} over
-GetEndDetailIntent When does {eventName} finished
-GetEndDetailIntent When does {eventName} done
-
-GetEventsOnDateIntent what is on {date}
-GetEventsOnDateIntent what is for {date}
-GetEventsOnDateIntent what is happening on {date}
-GetEventsOnDateIntent what is happening for {date}
-GetEventsOnDateIntent what is going on on {date}
-GetEventsOnDateIntent what is going on for {date}
-GetEventsOnDateIntent what is coming up on {date}
-GetEventsOnDateIntent what is coming up for {date}
-GetEventsOnDateIntent what is the haps on {date}
-GetEventsOnDateIntent what is the haps for {date}
-GetEventsOnDateIntent what is occurring on {date}
-GetEventsOnDateIntent what is occurring for {date}
-GetEventsOnDateIntent what is scheduled on {date}
-GetEventsOnDateIntent what is scheduled for {date}
-GetEventsOnDateIntent what is on the calendar on {date}
-GetEventsOnDateIntent what is on the calendar for {date}
-GetEventsOnDateIntent what is cool on {date}
-GetEventsOnDateIntent what is cool for {date}
-GetEventsOnDateIntent what is ahead on {date}
-GetEventsOnDateIntent what is ahead for {date}
-GetEventsOnDateIntent what is destined on {date}
-GetEventsOnDateIntent what is destined for {date}
-GetEventsOnDateIntent what is the future on {date}
-GetEventsOnDateIntent what is the future for {date}
-GetEventsOnDateIntent what's on {date}
-GetEventsOnDateIntent what's for {date}
-GetEventsOnDateIntent what's happening on {date}
-GetEventsOnDateIntent what's happening for {date}
-GetEventsOnDateIntent what's going on on {date}
-GetEventsOnDateIntent what's going on for {date}
-GetEventsOnDateIntent what's coming up on {date}
-GetEventsOnDateIntent what's coming up for {date}
-GetEventsOnDateIntent what's the haps on {date}
-GetEventsOnDateIntent what's the haps for {date}
-GetEventsOnDateIntent what's occurring on {date}
-GetEventsOnDateIntent what's occurring for {date}
-GetEventsOnDateIntent what's scheduled on {date}
-GetEventsOnDateIntent what's scheduled for {date}
-GetEventsOnDateIntent what's on the calendar on {date}
-GetEventsOnDateIntent what's on the calendar for {date}
-GetEventsOnDateIntent what's cool on {date}
-GetEventsOnDateIntent what's cool for {date}
-GetEventsOnDateIntent what's ahead on {date}
-GetEventsOnDateIntent what's ahead for {date}
-GetEventsOnDateIntent what's destined on {date}
-GetEventsOnDateIntent what's destined for {date}
-GetEventsOnDateIntent what's the future on {date}
-GetEventsOnDateIntent what's the future for {date}
-
-GetFeeDetailIntent the price for {eventName}
-GetFeeDetailIntent the price of {eventName}
-GetFeeDetailIntent it cost for {eventName}
-GetFeeDetailIntent it cost to attend {eventName}
-GetFeeDetailIntent the cost to go to {eventName}
-GetFeeDetailIntent the cost to attend {eventName}
-GetFeeDetailIntent What's the price for {eventName}
-GetFeeDetailIntent What's the price of {eventName}
-GetFeeDetailIntent What's it cost for {eventName}
-GetFeeDetailIntent What's it cost to attend {eventName}
-GetFeeDetailIntent What's the cost to go to {eventName}
-GetFeeDetailIntent What's the cost to attend {eventName}
-GetFeeDetailIntent what is the price for {eventName}
-GetFeeDetailIntent what is the price of {eventName}
-GetFeeDetailIntent what is it cost for {eventName}
-GetFeeDetailIntent what is it cost to attend {eventName}
-GetFeeDetailIntent what is the cost to go to {eventName}
-GetFeeDetailIntent what is the cost to attend {eventName}
-
-GetFeeDetailIntent How much money do tickets cost for {eventName}
-GetFeeDetailIntent How much moneys do tickets cost for {eventName}
-GetFeeDetailIntent How much bucks do tickets cost for {eventName}
-GetFeeDetailIntent How much buckaroos do tickets cost for {eventName}
-GetFeeDetailIntent How much cash do tickets cost for {eventName}
-GetFeeDetailIntent How much dough do tickets cost for {eventName}
-GetFeeDetailIntent How much green do tickets cost for {eventName}
-GetFeeDetailIntent How much smackaroos do tickets cost for {eventName}
-GetFeeDetailIntent How much wolfbucks do tickets cost for {eventName}
-
-GetFeeDetailIntent How much are tickets for {eventName}
-GetFeeDetailIntent How much are seats for {eventName}
-GetFeeDetailIntent How expensive are tickets for {eventName}
-GetFeeDetailIntent How expensive are seats for {eventName}
-
-GetFeeDetailIntent How much is {eventName}
-GetFeeDetailIntent How expensive is {eventName}
-
-GetFeeDetailIntent How much do tickets cost for {eventName}
-GetFeeDetailIntent How much do seats cost for {eventName}
-
-GetFeeDetailIntent How much does it cost to go to {eventName}
-GetFeeDetailIntent How much does it cost to attend {eventName}
-GetFeeDetailIntent How much does it cost to see {eventName}
-
-GetLocationDetailIntent Where is {eventName} at
-GetLocationDetailIntent Where is {eventName} going to be
-GetLocationDetailIntent Where is {eventName} happening
-GetLocationDetailIntent Where is {eventName} located
-GetLocationDetailIntent Where is {eventName} located at
-GetLocationDetailIntent Where is {eventName} going on
-GetLocationDetailIntent Where is {eventName} being held
-GetLocationDetailIntent Where is {eventName} being held at
-GetLocationDetailIntent Where's {eventName} at
-GetLocationDetailIntent Where's {eventName} going to be
-GetLocationDetailIntent Where's {eventName} happening
-GetLocationDetailIntent Where's {eventName} located
-GetLocationDetailIntent Where's {eventName} located at
-GetLocationDetailIntent Where's {eventName} going on
-GetLocationDetailIntent Where's {eventName} being held
-GetLocationDetailIntent Where's {eventName} being held at
-
-GetLocationDetailIntent Where's {eventName}
-GetLocationDetailIntent where is {eventName}
-
-GetLocationDetailIntent Where will {eventName} be at
-GetLocationDetailIntent Where will {eventName} be happening
-GetLocationDetailIntent Where will {eventName} be located
-GetLocationDetailIntent Where will {eventName} be located at
-GetLocationDetailIntent Where will {eventName} be going on
-GetLocationDetailIntent Where will {eventName} be held
-GetLocationDetailIntent Where will {eventName} be held at
-
 LecturesCategoryIntent lectures
 LecturesCategoryIntent talks
 LecturesCategoryIntent speeches
@@ -301,50 +259,6 @@ LecturesCategoryIntent how about colloquiums
 LecturesCategoryIntent how about teachings
 LecturesCategoryIntent how about the lecture category
 LecturesCategoryIntent how about talks and lessons
-
-NextEventIntent next thing
-NextEventIntent next event
-NextEventIntent next show
-NextEventIntent next meeting
-
-NextEventIntent thing soon
-NextEventIntent thing next
-NextEventIntent thing happening soon
-NextEventIntent thing happening next
-NextEventIntent event soon
-NextEventIntent event next
-NextEventIntent event happening soon
-NextEventIntent event happening next
-NextEventIntent show soon
-NextEventIntent show next
-NextEventIntent show happening soon
-NextEventIntent show happening next
-NextEventIntent meeting soon
-NextEventIntent meeting next
-NextEventIntent meeting happening soon
-NextEventIntent meeting happening next
-
-NextEventIntent what is the next event  
-NextEventIntent what is the next event on the calendar
-NextEventIntent what is coming up  
-NextEventIntent what is coming up on the calendar
-NextEventIntent what's the next event  
-NextEventIntent what's the next event on the calendar
-NextEventIntent what's coming up  
-NextEventIntent what's coming up on the calendar
-
-NextEventIntent something to do soon
-NextEventIntent something to do coming up
-NextEventIntent something to do that's soon
-NextEventIntent something to do that's coming up
-NextEventIntent something to do that is soon
-NextEventIntent something to do that is coming up
-NextEventIntent something fun soon
-NextEventIntent something fun coming up
-NextEventIntent something fun that's soon
-NextEventIntent something fun that's coming up
-NextEventIntent something fun that is soon
-NextEventIntent something fun that is coming up
 
 SportsCategoryIntent sports  
 SportsCategoryIntent sports category
@@ -418,3 +332,174 @@ SportsCategoryIntent how about athletics stuff
 SportsCategoryIntent how about athletics games
 SportsCategoryIntent how about athletics events
 SportsCategoryIntent how about athletics matches
+
+
+
+GetEndDetailIntent What time is it over
+GetEndDetailIntent What time is it end
+GetEndDetailIntent What time is it finish
+GetEndDetailIntent What time is it done
+GetEndDetailIntent What time is {eventName} over
+GetEndDetailIntent What time is {eventName} end
+GetEndDetailIntent What time is {eventName} finish
+GetEndDetailIntent What time is {eventName} done
+GetEndDetailIntent What time does it over
+GetEndDetailIntent What time does it end
+GetEndDetailIntent What time does it finish
+GetEndDetailIntent What time does it done
+GetEndDetailIntent What time does {eventName} over
+GetEndDetailIntent What time does {eventName} end
+GetEndDetailIntent What time does {eventName} finish
+GetEndDetailIntent What time does {eventName} done
+
+GetEndDetailIntent When is it end
+GetEndDetailIntent When is it over
+GetEndDetailIntent When is it finished
+GetEndDetailIntent When is it done
+GetEndDetailIntent When is {eventName} end
+GetEndDetailIntent When is {eventName} over
+GetEndDetailIntent When is {eventName} finished
+GetEndDetailIntent When is {eventName} done
+GetEndDetailIntent When does it end
+GetEndDetailIntent When does it over
+GetEndDetailIntent When does it finished
+GetEndDetailIntent When does it done
+GetEndDetailIntent When does {eventName} end
+GetEndDetailIntent When does {eventName} over
+GetEndDetailIntent When does {eventName} finished
+GetEndDetailIntent When does {eventName} done
+
+GetFeeDetailIntent the price for it
+GetFeeDetailIntent the price for {eventName}
+GetFeeDetailIntent the price of it
+GetFeeDetailIntent the price of {eventName}
+GetFeeDetailIntent it cost for it
+GetFeeDetailIntent it cost for {eventName}
+GetFeeDetailIntent it cost to attend it
+GetFeeDetailIntent it cost to attend {eventName}
+GetFeeDetailIntent the cost to go to it
+GetFeeDetailIntent the cost to go to {eventName}
+GetFeeDetailIntent the cost to attend it
+GetFeeDetailIntent the cost to attend {eventName}
+GetFeeDetailIntent What's the price for it
+GetFeeDetailIntent What's the price for {eventName}
+GetFeeDetailIntent What's the price of it
+GetFeeDetailIntent What's the price of {eventName}
+GetFeeDetailIntent What's it cost for it
+GetFeeDetailIntent What's it cost for {eventName}
+GetFeeDetailIntent What's it cost to attend it
+GetFeeDetailIntent What's it cost to attend {eventName}
+GetFeeDetailIntent What's the cost to go to it
+GetFeeDetailIntent What's the cost to go to {eventName}
+GetFeeDetailIntent What's the cost to attend it
+GetFeeDetailIntent What's the cost to attend {eventName}
+GetFeeDetailIntent what is the price for it
+GetFeeDetailIntent what is the price for {eventName}
+GetFeeDetailIntent what is the price of it
+GetFeeDetailIntent what is the price of {eventName}
+GetFeeDetailIntent what is it cost for it
+GetFeeDetailIntent what is it cost for {eventName}
+GetFeeDetailIntent what is it cost to attend it
+GetFeeDetailIntent what is it cost to attend {eventName}
+GetFeeDetailIntent what is the cost to go to it
+GetFeeDetailIntent what is the cost to go to {eventName}
+GetFeeDetailIntent what is the cost to attend it
+GetFeeDetailIntent what is the cost to attend {eventName}
+
+GetFeeDetailIntent How much money do tickets cost  
+GetFeeDetailIntent How much money do tickets cost for {eventName}
+GetFeeDetailIntent How much moneys do tickets cost  
+GetFeeDetailIntent How much moneys do tickets cost for {eventName}
+GetFeeDetailIntent How much bucks do tickets cost  
+GetFeeDetailIntent How much bucks do tickets cost for {eventName}
+GetFeeDetailIntent How much buckaroos do tickets cost  
+GetFeeDetailIntent How much buckaroos do tickets cost for {eventName}
+GetFeeDetailIntent How much cash do tickets cost  
+GetFeeDetailIntent How much cash do tickets cost for {eventName}
+GetFeeDetailIntent How much dough do tickets cost  
+GetFeeDetailIntent How much dough do tickets cost for {eventName}
+GetFeeDetailIntent How much green do tickets cost  
+GetFeeDetailIntent How much green do tickets cost for {eventName}
+GetFeeDetailIntent How much smackaroos do tickets cost  
+GetFeeDetailIntent How much smackaroos do tickets cost for {eventName}
+GetFeeDetailIntent How much wolfbucks do tickets cost  
+GetFeeDetailIntent How much wolfbucks do tickets cost for {eventName}
+
+GetFeeDetailIntent How much are tickets  
+GetFeeDetailIntent How much are tickets for {eventName}
+GetFeeDetailIntent How much are seats  
+GetFeeDetailIntent How much are seats for {eventName}
+GetFeeDetailIntent How expensive are tickets  
+GetFeeDetailIntent How expensive are tickets for {eventName}
+GetFeeDetailIntent How expensive are seats  
+GetFeeDetailIntent How expensive are seats for {eventName}
+
+GetFeeDetailIntent How much is it
+GetFeeDetailIntent How much is {eventName}
+GetFeeDetailIntent How expensive is it
+GetFeeDetailIntent How expensive is {eventName}
+
+GetFeeDetailIntent How much do tickets cost  
+GetFeeDetailIntent How much do tickets cost for {eventName}
+GetFeeDetailIntent How much do seats cost  
+GetFeeDetailIntent How much do seats cost for {eventName}
+
+GetFeeDetailIntent How much does it cost to go to it
+GetFeeDetailIntent How much does it cost to go to {eventName}
+GetFeeDetailIntent How much does it cost to attend it
+GetFeeDetailIntent How much does it cost to attend {eventName}
+GetFeeDetailIntent How much does it cost to see it
+GetFeeDetailIntent How much does it cost to see {eventName}
+
+GetLocationDetailIntent Where is it at
+GetLocationDetailIntent Where is it going to be
+GetLocationDetailIntent Where is it happening
+GetLocationDetailIntent Where is it located
+GetLocationDetailIntent Where is it located at
+GetLocationDetailIntent Where is it going on
+GetLocationDetailIntent Where is it being held
+GetLocationDetailIntent Where is it being held at
+GetLocationDetailIntent Where is {eventName} at
+GetLocationDetailIntent Where is {eventName} going to be
+GetLocationDetailIntent Where is {eventName} happening
+GetLocationDetailIntent Where is {eventName} located
+GetLocationDetailIntent Where is {eventName} located at
+GetLocationDetailIntent Where is {eventName} going on
+GetLocationDetailIntent Where is {eventName} being held
+GetLocationDetailIntent Where is {eventName} being held at
+GetLocationDetailIntent Where's it at
+GetLocationDetailIntent Where's it going to be
+GetLocationDetailIntent Where's it happening
+GetLocationDetailIntent Where's it located
+GetLocationDetailIntent Where's it located at
+GetLocationDetailIntent Where's it going on
+GetLocationDetailIntent Where's it being held
+GetLocationDetailIntent Where's it being held at
+GetLocationDetailIntent Where's {eventName} at
+GetLocationDetailIntent Where's {eventName} going to be
+GetLocationDetailIntent Where's {eventName} happening
+GetLocationDetailIntent Where's {eventName} located
+GetLocationDetailIntent Where's {eventName} located at
+GetLocationDetailIntent Where's {eventName} going on
+GetLocationDetailIntent Where's {eventName} being held
+GetLocationDetailIntent Where's {eventName} being held at
+
+GetLocationDetailIntent Where's it
+GetLocationDetailIntent Where's {eventName}
+GetLocationDetailIntent where is it
+GetLocationDetailIntent where is {eventName}
+
+GetLocationDetailIntent Where will it be at
+GetLocationDetailIntent Where will it be happening
+GetLocationDetailIntent Where will it be located
+GetLocationDetailIntent Where will it be located at
+GetLocationDetailIntent Where will it be going on
+GetLocationDetailIntent Where will it be held
+GetLocationDetailIntent Where will it be held at
+GetLocationDetailIntent Where will {eventName} be at
+GetLocationDetailIntent Where will {eventName} be happening
+GetLocationDetailIntent Where will {eventName} be located
+GetLocationDetailIntent Where will {eventName} be located at
+GetLocationDetailIntent Where will {eventName} be going on
+GetLocationDetailIntent Where will {eventName} be held
+GetLocationDetailIntent Where will {eventName} be held at
