@@ -46,6 +46,24 @@
         ]
     },
     {
+      "intent": "DaysUntilAcademicEventIntent",
+        "slots": [
+          {
+            "name": "AcademicEvent",
+            "type": "LIST_OF_ACADEMIC_EVENTS"
+          }
+        ]
+    },
+    {
+      "intent": "IsThereClassIntent",
+        "slots": [
+          {
+            "name": "date",
+            "type": "AMAZON.DATE"
+          }
+        ]
+    },
+    {
       "intent": "AllCategoryIntent"
     },
     {

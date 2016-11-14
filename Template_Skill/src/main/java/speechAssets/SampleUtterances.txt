@@ -1,3 +1,7 @@
+DaysUntilAcademicEventIntent how many days are there until {AcademicEvent}
+
+DaysUntilAcademicEventIntent the number of days until {AcademicEvent}
+
 GetEventsOnDateIntent what is on {date}
 GetEventsOnDateIntent what is for {date}
 GetEventsOnDateIntent what is happening on {date}
@@ -481,6 +485,12 @@ GetLocationDetailIntent Where will {eventName} be held at
 
 
 
+IsThereClassIntent is there class on {date}
+
+IsThereClassIntent is there going to be class on {date}
+
+
+
 WhenIsAcademicEventIntent when is {AcademicEvent} over
 WhenIsAcademicEventIntent when is {AcademicEvent}  
 
@@ -492,3 +502,4 @@ WhenIsAcademicEventIntent when does {AcademicEvent} start
 WhenIsAcademicEventIntent when does {AcademicEvent} begin
 WhenIsAcademicEventIntent when does {AcademicEvent} end
 WhenIsAcademicEventIntent when does {AcademicEvent} finish
+

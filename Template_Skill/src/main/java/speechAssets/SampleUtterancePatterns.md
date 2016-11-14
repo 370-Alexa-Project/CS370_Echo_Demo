@@ -5,6 +5,8 @@ Documentation for utterances can be found here:
 https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/supported-phrases-to-begin-a-conversation
 
 ```
+DaysUntilAcademicEventIntent how many days are there until {AcademicEvent}
+DaysUntilAcademicEventIntent the number of days until {AcademicEvent}
 GetEventsOnDateIntent (what is|what's) ( |happening|going on|coming up|the haps|occurring|scheduled|on the calendar|cool|ahead|destined|the future) (on|for) {date}
 NextEventIntent next (thing|event|show|meeting)
 NextEventIntent (thing|event|show|meeting) ( |happening) (soon|next)
@@ -28,6 +30,9 @@ GetFeeDetailIntent How much does it cost to (go to|attend|see) (it|{eventName})
 GetLocationDetailIntent (Where is|Where's) (it|{eventName}) (at|going to be|happening|located|located at|going on|being held|being held at)
 GetLocationDetailIntent (Where's|where is) (it|{eventName})
 GetLocationDetailIntent Where will (it|{eventName}) be (at|happening|located|located at|going on|held|held at)
+
+IsThereClassIntent is there class on {date}
+IsThereClassIntent is there going to be class on {date}
 
 WhenIsAcademicEventIntent when is {AcademicEvent} (over| )
 WhenIsAcademicEventIntent (what day does|when does) {AcademicEvent} (start|begin|end|finish)
