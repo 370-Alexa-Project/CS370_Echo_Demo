@@ -216,18 +216,20 @@ public class AcademicCalendar extends Conversation {
 			return CalendarConversation.newInternalErrorResponse();
 		}
 		
-		if (results.get("is_school_holiday").size() == 0)
-			return newTellResponse("I couldn't seem to find whether there is class on " +
-					dateRange.getDateSsml(), false);
-		
 		String response;
 		
-		if (results.get("is_school_holiday").get(0).toString().equals('t'))
+		if (results.get("is_school_holiday").size() == 0){
+			response = "<speak> I couldn't seem to find whether there is class on " +
+			dateRange.getDateSsml() + ". <speak>";
+			
+		} else if (results.get("is_school_holiday").get(0).toString().equals('t')) {
 			response = "There will not be any classes on " + dateRange.getDateSsml() + "."; 
-		else
+			
+		} else {
 			response = "Classes will be in session on " + dateRange.getDateSsml() + "."; 
+		}
 		
-		return newTellResponse("<speak>" + response + "<speak>", false);
+		return newTellResponse("<speak>" + response + "</speak>", true);
 	}
 	
 	
