@@ -181,6 +181,44 @@ CREATE FUNCTION days_until_event(event_name text)
   $days_until_event$ LANGUAGE plpgsql;
 ALTER FUNCTION days_until_event(text) OWNER TO ssuadmin;
 
+-- returns true if:
+--     The given_date is on a weekend
+--     The given_date is between the start and end of an event
+--     that is a 'School Holiday'
+-- Otherwise, the function will return false.
+CREATE FUNCTION is_school_holiday(given_date date)
+  RETURNS BOOLEAN AS
+  $$
+  DECLARE
+    is_school boolean;
+    num_events integer;
+    day_of_week double precision;
+  BEGIN
+   SELECT count(*)
+   INTO num_events
+   FROM events
+   LEFT JOIN event_types
+   ON event_types.event_type_id = events.event_type_id
+   WHERE event_types.name = 'School Holiday' 
+   AND (start::date = given_date
+    OR (start::date <= given_date AND given_date <= "end"::date));
+
+   IF (num_events > 0)
+    THEN return true;
+   END IF;
+
+   day_of_week = date_part('dow', given_date);
+   IF(day_of_week = 0 OR day_of_week = 6)
+    THEN return true;
+   END IF;
+
+   return false;
+
+  END;
+  $$
+  LANGUAGE plpgsql;
+ALTER FUNCTION is_school_holiday(date) OWNER TO ssuadmin;
+
 
 --
 -- Foreign key constraints
