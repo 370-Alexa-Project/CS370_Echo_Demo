@@ -152,6 +152,35 @@ CREATE FUNCTION given_category(category text, startDay date, endDay date)
   LANGUAGE plpgsql;
 ALTER FUNCTION given_category(text, date, date) OWNER TO ssuadmin;
 
+-- Returns the number of days between now and an event with the given event_name.
+-- If there are multiple days with the same name, the function will return
+-- the number of days between now and the next upcoming one.
+-- If the event is currently in progress, the function will get get the
+-- next one.
+DROP FUNCTION days_until_event(text);
+CREATE FUNCTION days_until_event(event_name text)
+  RETURNS INTEGER AS $days_until_event$
+  
+  DECLARE
+    event_date timestamp;
+    days_until_event integer;
+  BEGIN
+    SELECT start INTO event_date
+    FROM events
+    WHERE title = event_name AND start > now()
+    ORDER BY start ASC
+    LIMIT 1;
+
+    SELECT event_date::date - now()::date
+    INTO days_until_event;
+    
+    RETURN days_until_event;
+    
+  END;
+
+  $days_until_event$ LANGUAGE plpgsql;
+ALTER FUNCTION days_until_event(text) OWNER TO ssuadmin;
+
 
 --
 -- Foreign key constraints
