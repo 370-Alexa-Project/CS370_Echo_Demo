@@ -29,6 +29,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 import java.util.Vector;
+import java.util.Collections;
 
 
 public class CalendarConversation extends Conversation {
@@ -38,6 +39,8 @@ public class CalendarConversation extends Conversation {
 		AMAZON_HELP("AMAZON.HelpIntent"),
 		AMAZON_NO("AMAZON.NoIntent"),
 		AMAZON_STOP("AMAZON.StopIntent"),
+		AMAZON_PREVIOUS("AMAZON.PreviousIntent"),
+		AMAZON_NEXT("AMAZON.NextIntent"),
 
 		NEXT_EVENT("NextEventIntent"),
 		GET_EVENTS_ON_DATE ("GetEventsOnDateIntent"),
@@ -75,7 +78,8 @@ public class CalendarConversation extends Conversation {
 	/** Slot names */
 	private enum CalendarSlot {
 		EVENT_NAME("eventName"),
-		AMAZON_DATE("date");
+		AMAZON_DATE("date"),
+		LIST_OF_CATEGORIES("listOfCategories");
 
 		private final String value;
 		private CalendarSlot(String value) { this.value = value; }
@@ -94,7 +98,8 @@ public class CalendarConversation extends Conversation {
 	private enum CalendarAttrib {
 		STATE_ID("stateId"),
 		SAVED_DATE("savedDate"),
-		RECENTLY_SAID_EVENTS("recentlySaidEvents");
+		RECENTLY_SAID_EVENTS("recentlySaidEvents"),
+		CURRENT_CATEGORY("currentCategory");
 
 		private final String value;
 		private CalendarAttrib(String value) { this.value = value; }
@@ -119,7 +124,9 @@ public class CalendarConversation extends Conversation {
 	/** Session states */
 	private enum SessionState {
 		USER_HEARD_EVENTS, // The user has heard a list of events and can now ask about specific ones.
-		LIST_TOO_LONG; // The list of events is too long, so the user must narrow it down somehow.
+		LIST_TOO_LONG, // The list of events is too long, so the user must narrow it down somehow.
+		AMAZON_PREVIOUS, // The user wants previous event.
+		AMAZON_NEXT; // The user wants the next event.
 
 		public static SessionState valueOf(Session session) {
 			String stateName = (String) CalendarAttrib.getSessionAttribute(session, CalendarAttrib.STATE_ID);
@@ -131,6 +138,7 @@ public class CalendarConversation extends Conversation {
 
 	// Other constants
 	private final static int MAX_EVENTS = 5;
+	private final static int MAX_CATEGORIES = 8;
 
 	private DbConnection db;
 
@@ -238,7 +246,6 @@ public class CalendarConversation extends Conversation {
 		if (state == null)
 			return newBadStateResponse("handleStateSensitiveIntents");
 
-
 		switch (state) {
 		case USER_HEARD_EVENTS:
 			response = routeDetailIntents(intentReq, session);
@@ -246,6 +253,14 @@ public class CalendarConversation extends Conversation {
 
 		case LIST_TOO_LONG:
 			response = handleNarrowDownIntents(intentReq, session);
+			break;
+
+		case AMAZON_PREVIOUS:
+			response = handleAmazonPreviousIntent(intentReq, session);
+			break;
+
+		case AMAZON_NEXT:
+			response = handleAmazonNextIntent(intentReq, session);
 			break;
 
 		default:
@@ -288,6 +303,30 @@ public class CalendarConversation extends Conversation {
 
 	private SpeechletResponse handleAmazonStopIntent(IntentRequest intentReq, Session session) {
 		return newTellResponse("", false);
+	}
+
+
+	private SpeechletResponse handleAmazonPreviousIntent(IntentRequest intentReq, Session session) {
+		return newTellResponse("", false);
+	}
+
+
+	// This is the variable declaration for the list traversal feature, using the categories.
+	private final static Map<String, String> synonymsForCategories;
+	static {
+		Map<String, String> s = new HashMap<String, String>();
+		s.put("athletics",                          "Athletics");
+		s.put("sports",                             "Athletics");
+		s.put("teams",                              "Athletics");
+		s.put("games",                              "Athletics");
+		synonymsForCategories = Collections.unmodifiableMap(s);
+	}
+
+	private final static String sportsPhrase = "Sports";
+
+	private SpeechletResponse handleAmazonNextIntent(IntentRequest intentReq, Session session) {
+		String categoryName = Synonym.getSynonym(sportsPhrase, synonymsForCategories);
+		return handleNarrowDownIntents(intentReq, session );
 	}
 
 
@@ -496,7 +535,6 @@ public class CalendarConversation extends Conversation {
 
 		// Format the first part of the response to indicate the category.
 		String categoryPrefix = CalendarHelper.randomAffirmative() + ". Here are the " + category + " events that I was able to find. ";
-
 
 		return dayByDayEventsResponse(results, dateRange, categoryPrefix);
 	}
@@ -734,12 +772,14 @@ public class CalendarConversation extends Conversation {
 		                      "<speak>" + repromptSsml + "</speak>", true);
 	}
 
+
 	/**
 	 * Generic response for when we experience an internal error
 	 */
 	public static SpeechletResponse newInternalErrorResponse() {
 		return newTellResponse("Sorry, I'm on break", false);
 	}
+
 
 	/**
 	 * Generic response for when we don't know what's going on
