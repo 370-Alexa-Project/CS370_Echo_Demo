@@ -137,11 +137,13 @@ public class DbConnection {
 	 * 
 	 * @post The dbConnection private data member will be initialized with the
 	 *       connection.
+	 *
+	 * @param timeZone if non-null, the time zone to set for the session.
 	 * 
 	 * @return true if the database was successfully connected to. Otherwise,
 	 *         false if there were any errors.
 	 */
-	public boolean getRemoteConnection() {
+	public boolean getRemoteConnection(String timeZone) {
 		// Create a URL to be able to connect to the database.
 		String jdbcUrl =
 			String.format("jdbc:postgresql://%s:%s/%s?user=%s&password=%s&sslmode=verify-full&sslrootcert=%s&currentSchema=%s",
@@ -150,6 +152,12 @@ public class DbConnection {
 		try {
 			Class.forName("org.postgresql.Driver");
 			dbConnection = DriverManager.getConnection(jdbcUrl);
+
+			if (timeZone != null) {
+				String query = String.format("SET timezone TO '%s'", timeZone);
+				Statement st = dbConnection.createStatement();
+				st.execute(query);
+			}
 
 		// Error handling
 		} catch (ClassNotFoundException e1) {
