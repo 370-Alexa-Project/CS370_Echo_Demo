@@ -86,7 +86,7 @@ public class TemplateBaseSkillSpeechlet implements Speechlet {
                 session.getSessionId());
 
         String welcomeStr =
-            "Welcome to the SSU Events skill. You can start by asking me what's " +
+            "Welcome to Sonoma State Events, I can help you find out what's happening at Sonoma State University. You can start by asking me what's " +
             "happening today or on another upcoming date.";
         PlainTextOutputSpeech outputSpeech = new PlainTextOutputSpeech();
         outputSpeech.setText(welcomeStr);

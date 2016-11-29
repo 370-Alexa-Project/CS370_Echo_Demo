@@ -39,8 +39,6 @@ public class CalendarConversation extends Conversation {
 		AMAZON_HELP("AMAZON.HelpIntent"),
 		AMAZON_NO("AMAZON.NoIntent"),
 		AMAZON_STOP("AMAZON.StopIntent"),
-		AMAZON_PREVIOUS("AMAZON.PreviousIntent"),
-		AMAZON_NEXT("AMAZON.NextIntent"),
 
 		NEXT_EVENT("NextEventIntent"),
 		GET_EVENTS_ON_DATE ("GetEventsOnDateIntent"),
@@ -77,7 +75,7 @@ public class CalendarConversation extends Conversation {
 	private enum CalendarSlot {
 		EVENT_NAME("eventName"),
 		AMAZON_DATE("date"),
-		LIST_OF_CATEGORIES("listOfCategories");
+		CATEGORY("category");
 
 		private final String value;
 		private CalendarSlot(String value) { this.value = value; }
@@ -253,14 +251,6 @@ public class CalendarConversation extends Conversation {
 			response = handleNarrowDownIntents(intentReq, session);
 			break;
 
-		case AMAZON_PREVIOUS:
-			response = handleAmazonPreviousIntent(intentReq, session);
-			break;
-
-		case AMAZON_NEXT:
-			response = handleAmazonNextIntent(intentReq, session);
-			break;
-
 		default:
 			throw new IllegalStateException("Unhandled SessionState value " + state);
 		}
@@ -298,16 +288,9 @@ public class CalendarConversation extends Conversation {
 		return response;
 	}
 
-
 	private SpeechletResponse handleAmazonStopIntent(IntentRequest intentReq, Session session) {
 		return newTellResponse("", false);
 	}
-
-
-	private SpeechletResponse handleAmazonPreviousIntent(IntentRequest intentReq, Session session) {
-		return newTellResponse("", false);
-	}
-
 
 	// This is the variable declaration for the list traversal feature, using the categories.
 	private final static Map<String, String> synonymsForCategories;
