@@ -64,22 +64,19 @@
         ]
     },
     {
-      "intent": "AllCategoryIntent"
-    },
-    {
-      "intent": "SportsCategoryIntent"
-    },
-    {
-      "intent": "ArtsAndEntertainmentCategoryIntent"
-    },
-    {
-      "intent": "LecturesCategoryIntent"
-    },
-    {
-      "intent": "ClubsCategoryIntent"
+      "intent": "CategoryIntent",
+        "slots": [
+          {
+            "name": "Category",
+            "type": "CATEGORY"
+          }
+        ]
     },
     {
       "intent": "NextEventIntent"
+    },
+    {
+      "intent": "AMAZON.YesIntent"
     },
     {
       "intent": "AMAZON.NoIntent"
